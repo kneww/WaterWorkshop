@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { AlertController } from 'ionic-angular';
 /**
  * Generated class for the Sn1Sec3Component component.
  *
@@ -16,7 +16,7 @@ export class Sn1Sec3Component {
   stepCondition :boolean
   isShow: boolean
   step:number
-  constructor() {
+  constructor(private alertCtrl: AlertController) {
     console.log('Hello Sn1Sec3Component Component');
     this.text = 'Hello World';
     this.stepCondition = true;
@@ -26,6 +26,32 @@ export class Sn1Sec3Component {
 
   onFinish(){
     
+  }
+  presentPrompts() {
+    let alert = this.alertCtrl.create({
+      title: 'ปัญหาที่พบ',
+      inputs: [
+        {
+          name: 'ปัญหาที่พบ',
+          placeholder: 'ปัญหาที่พบ'
+        }
+      ],
+      buttons: [
+        {
+          text: 'ยกเลิก',
+          role: 'cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'บันทึก',
+          
+          }
+        
+      ]
+    });
+    alert.present();
   }
   
 
