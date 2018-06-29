@@ -1,6 +1,6 @@
 {
-  "name": "test",
-  "app_id": "7a7930cc",
+  "name": "water",
+  "app_id": "",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
